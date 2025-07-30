@@ -39,11 +39,7 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
-    let totalCost = 0;
-    cart.forEach((item) => {
-        totalCost += parseFloat(item.cost.substring(1)) * item.quantity;
-    });
-    return totalCost;
+    return item.quantity * parseFloat(item.cost.substring(1));
   };
 
   return (
